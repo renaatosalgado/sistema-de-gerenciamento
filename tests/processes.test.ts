@@ -31,11 +31,23 @@ describe('Teste 02', () => {
 
         response.body.forEach((process: { value: number }) => {
             sum += process.value
-        })
+        });
 
         const average = sum / response.body.length;
 
         expect(average).toBe(110000);
+        expect(response.status).toBe(200);
+    })
+})
+
+describe('Teste 03', () => {
+    it('Calcular o Número de processos com valor acima de R$ 100.000,00. A aplicação deve retornar 2.', async () => {
+
+        const value = 100000;
+
+        const response = await server.get(`/processes/value?greaterThan=${value}`);
+
+        expect(response.body).toHaveLength(2);
         expect(response.status).toBe(200);
     })
 })
