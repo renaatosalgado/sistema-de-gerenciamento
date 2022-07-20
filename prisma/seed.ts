@@ -30,8 +30,8 @@ async function main() {
 	if (!company) {
 		await prisma.company.createMany({
 			data: [
-				{ name: "A", cnpj: "00000000001", stateId: 1 },
-				{ name: "B", cnpj: "00000000002", stateId: 2 }
+				{ name: "Empresa-A", cnpj: "00000000001", stateId: 1 },
+				{ name: "Empresa-B", cnpj: "00000000002", stateId: 2 }
 
 			]
 		})

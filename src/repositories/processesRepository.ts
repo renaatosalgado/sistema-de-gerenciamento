@@ -18,12 +18,12 @@ async function findByCompanyAndState(company: string, state: string) {
 			AND: {
 				company: {
 					name: {
-						equals: company.toUpperCase()
+						equals: company
 					}
 				},
 				state: {
 					name: {
-						equals: state.toUpperCase()
+						equals: state
 					}
 				}
 			}
@@ -46,7 +46,8 @@ async function listAll() {
 		include: {
 			company: {
 				select: {
-					stateId: true
+					stateId: true,
+					name: true
 				}
 			}
 		}

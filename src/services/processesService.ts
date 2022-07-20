@@ -6,7 +6,7 @@ async function findByStatus(status: string): Promise<Process[]> {
 }
 
 async function findByCompanyAndState(company: string, state: string): Promise<Process[]> {
-    return await processesRepository.findByCompanyAndState(company, state);
+    return await processesRepository.findByCompanyAndState(company, state.toUpperCase());
 }
 
 async function filterByGreaterValue(value: number): Promise<Process[]> {
