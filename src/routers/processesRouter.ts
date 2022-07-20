@@ -11,5 +11,3 @@ processesRouter.get("/processes", processesController.listAll);
 processesRouter.get("/processes/number", processesController.filterByName)
 
 export default processesRouter;
-
-// dayjs("2007-09-05T00:00:00.000Z").month() +1

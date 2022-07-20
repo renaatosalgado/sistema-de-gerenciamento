@@ -81,7 +81,9 @@ describe('Teste 04', () => {
 describe('Teste 05', () => {
     it('Obter a lista de processos no mesmo estado do cliente, para cada um dos clientes. A aplicação deve retornar uma lista com os processos de número “00001CIVELRJ”,”00004CIVELRJ” para o Cliente "Empresa A" e “00008CIVELSP”,”00009CIVELSP” para o o Cliente "Empresa B".', async () => {
 
-        /*  */
+        /* 
+            
+        */
         const companyA = 'Empresa-A';
         const companyAProcessesNumber: string[] = [];
         const companyB = 'Empresa-B';
