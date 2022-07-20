@@ -12,8 +12,13 @@ async function filterByGreaterValue(value: number) {
     return await processesRepository.filterByGreaterValue(value)
 }
 
+async function listAll() {
+    return await processesRepository.listAll();
+}
+
 export default {
     findByStatus,
     findByCompanyAndState,
-    filterByGreaterValue
+    filterByGreaterValue,
+    listAll
 }

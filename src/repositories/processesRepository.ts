@@ -41,8 +41,33 @@ async function filterByGreaterValue(value: number) {
 	})
 }
 
+async function listAll() {
+	return await prisma.process.findMany({
+		include: {
+			company: {
+				select: {
+					stateId: true
+				}
+			}
+		}
+	});
+}
+
+async function filterByName() {
+	return prisma.process.findMany({
+		where: {
+			number: {
+				contains: "trab",
+				mode: 'insensitive'
+			}
+		}
+	});
+}
+
 export default {
 	findByStatus,
 	findByCompanyAndState,
-	filterByGreaterValue
+	filterByGreaterValue,
+	listAll,
+	filterByName
 }
