@@ -53,11 +53,11 @@ async function listAll() {
 	});
 }
 
-async function filterByName() {
+async function filterByName(number: string) {
 	return prisma.process.findMany({
 		where: {
 			number: {
-				contains: "trab",
+				contains: number,
 				mode: 'insensitive'
 			}
 		}

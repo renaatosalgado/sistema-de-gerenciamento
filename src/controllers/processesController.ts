@@ -28,9 +28,17 @@ async function listAll(req: Request, res: Response) {
     res.status(200).send(processes);
 }
 
+async function filterByName(req: Request, res: Response) {
+    const { number } = req.query;
+    const result = await processesService.filterByName(number as string);
+
+    res.status(200).send(result);
+}
+
 export default {
     findByStatus,
     findByCompanyAndState,
     filterByGreaterValue,
-    listAll    
+    listAll,
+    filterByName
 }
