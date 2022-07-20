@@ -15,7 +15,15 @@ async function findByCompanyAndState(req: Request, res: Response) {
     res.status(200).send(result)
 }
 
+async function filterByGreaterValue(req: Request, res: Response) {
+    const { greaterThan } = req.query;
+    const result = await processesService.filterByGreaterValue(+greaterThan);
+
+    res.status(200).send(result);
+}
+
 export default {
     findByStatus,
-    findByCompanyAndState
+    findByCompanyAndState,
+    filterByGreaterValue
 }

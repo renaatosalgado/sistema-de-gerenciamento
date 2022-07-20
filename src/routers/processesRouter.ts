@@ -5,6 +5,8 @@ const processesRouter = Router();
 
 processesRouter.get("/processes/status", processesController.findByStatus);
 processesRouter.get("/processes/average", processesController.findByCompanyAndState);
+processesRouter.get("/processes/value", processesController.filterByGreaterValue);
+
 
 
 export default processesRouter;

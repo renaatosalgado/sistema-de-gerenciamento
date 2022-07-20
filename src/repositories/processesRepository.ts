@@ -31,7 +31,18 @@ async function findByCompanyAndState(company: string, state: string) {
 	})
 }
 
+async function filterByGreaterValue(value: number) {
+	return prisma.process.findMany({
+		where: {
+			value: {
+				gt: value
+			}
+		}
+	})
+}
+
 export default {
 	findByStatus,
-	findByCompanyAndState
+	findByCompanyAndState,
+	filterByGreaterValue
 }
