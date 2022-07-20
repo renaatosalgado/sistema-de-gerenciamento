@@ -1,0 +1,51 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Company {
+  id      Int       @id @default(autoincrement())
+  name    String
+  cnpj    String    @unique
+  stateId Int
+  state   State     @relation(fields: [stateId], references: [id])
+  Process Process[]
+
+  @@map("companies")
+}
+
+model State {
+  id      Int       @id @default(autoincrement())
+  name    String    @unique
+  Company Company[]
+  Process Process[]
+
+  @@map("states")
+}
+
+model Process {
+  id        Int      @id @default(autoincrement())
+  companyId Int
+  company   Company  @relation(fields: [companyId], references: [id])
+  statusId  Int
+  number    String
+  stateId   Int
+  value     Int
+  date      DateTime
+  state     State    @relation(fields: [stateId], references: [id])
+  status    Status   @relation(fields: [statusId], references: [id])
+
+  @@map("processes")
+}
+
+model Status {
+  id      Int       @id @default(autoincrement())
+  name    String    @unique
+  Process Process[]
+
+  @@map("status")
+}
