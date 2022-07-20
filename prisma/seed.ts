@@ -7,10 +7,10 @@ async function main() {
 	if (!state) {
 		await prisma.state.createMany({
 			data: [
-				{ name: "Rio de Janeiro" },
-				{ name: "São Paulo" },
-				{ name: "Minas Gerais" },
-				{ name: "Amazonas" }
+				{ name: "RJ" },
+				{ name: "SP" },
+				{ name: "MG" },
+				{ name: "AM" }
 
 			]
 		})
