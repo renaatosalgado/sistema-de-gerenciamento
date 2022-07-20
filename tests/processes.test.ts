@@ -90,14 +90,29 @@ describe('Teste 05', () => {
 
         const response = await server.get('/processes');
 
-        const companyAProcesses = response.body.filter((process: { company: { name: string; stateId: number; }; stateId: number; }) => process.company.name === companyA && process.company.stateId === process.stateId);
-        companyAProcesses.forEach((process: { number: any; }) => companyAProcessesNumber.push(process.number))
+        const companyAProcesses = response.body.filter((process: { company: { name: string; stateId: number }; stateId: number }) => process.company.name === companyA && process.company.stateId === process.stateId);
+        companyAProcesses.forEach((process: { number: any; }) => companyAProcessesNumber.push(process.number));
 
-        const companyBProcesses = response.body.filter((process: { company: { name: string; stateId: number; }; stateId: number; }) => process.company.name === companyB && process.company.stateId === process.stateId);
-        companyBProcesses.forEach((process: { number: any; }) => companyBProcessesNumber.push(process.number))
+        const companyBProcesses = response.body.filter((process: { company: { name: string; stateId: number }; stateId: number }) => process.company.name === companyB && process.company.stateId === process.stateId);
+        companyBProcesses.forEach((process: { number: any; }) => companyBProcessesNumber.push(process.number));
 
         expect(companyAProcessesNumber).toEqual(['00001CIVELRJ', '00004CIVELRJ']);
         expect(companyBProcessesNumber).toEqual(['00008CIVELSP', '00009CIVELSP']);
         expect(response.status).toBe(200);
-    })
-})
+    });
+});
+
+describe('Teste 06', () => {
+    it('Obter a lista de processos que contenham a sigla “TRAB”. A aplicação deve retornar uma lista com os processos “00003TRABMG” e “00010TRABAM”.', async () => {
+
+        const number = 'TRAB';
+        const processes: string[] = [];
+
+        const response = await server.get('/processes/number?number=trab');
+
+        response.body.forEach((process: { number: string }) => processes.push(process.number));
+
+        expect(processes).toEqual(['00003TRABMG', '00010TRABAM']);
+        expect(response.status).toBe(200);
+    });
+});

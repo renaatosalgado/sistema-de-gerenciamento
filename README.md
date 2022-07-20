@@ -6,15 +6,15 @@ Nesta rota é possível filtrar pelo status do processo (inativo ou ativo).
 
 ## Teste 02
 
-Rota: http://localhost:5000/processes/average?company=empresa-a&state=rj
+Rota: http://localhost:5000/processes/average?company=Empresa-A&state=rj
 
-Nesta rota é possível filtrar os processos por empresas (A ou B) e estado (RJ, SP, MG ou AM).
+Nesta rota é possível filtrar os processos por empresas (Empresa-A ou Empresa-B) e estado (RJ, SP, MG ou AM).
 
 ## Teste 03
 
 Rota: http://localhost:5000/processes/value?greaterThan=100000
 
-Nesta rota é possível filtrar pelo valor do processo, retornando os que possuirem valor superior ao informado.
+Nesta rota é possível filtrar pelo valor do processo, retornando os que possuirem valor superior ao informado, em R$.
 
 ## Teste 04
 
@@ -28,6 +28,7 @@ Por isso, no teste, existe um filtro que define o mês a ser considerado para o 
 Rota: http://localhost:5000/processes
 
 Nesta rota todos os processos são listados, incluindo o estado do mesmo e também o estado da empresa.
+Sendo assim, no teste existe a filtragem e verificação para relacionar o estado da empresa com o estado do processo e retornar os processos que são so mesmo estado da empresa.
 
 ## Teste 06
 
