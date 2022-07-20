@@ -1,3 +1,21 @@
+# Teste Técnico - Número 03 - Sistema de Gerenciamento de Processos
+
+## Como rodar o projeto
+
+1. Clone este repositório
+2. Instale as dependências
+```bash
+npm i
+```
+3. Rode o servidor localmente
+```bash
+npm run dev
+```
+4. Para conferir os testes, execute
+```bash
+npm t
+```
+
 ## Teste 01
 
 Rota: http://localhost:5000/processes/status?name=ativo
@@ -35,6 +53,3 @@ Sendo assim, no teste existe a filtragem e verificação para relacionar o estad
 Rota: http://localhost:5000/processes/number?number=trab
 
 Nesta rota é possível filtrar por qualquer string contendo parte do número do processo.
-
-
-
