@@ -2,8 +2,8 @@ import { Request, Response } from "express";
 import processesService from "../services/processesService.js";
 
 async function findByStatus(req: Request, res: Response) {
-    const { status } = req.query;
-    const activeProcesses = await processesService.findByStatus(status as string);
+    const { name } = req.query;
+    const activeProcesses = await processesService.findByStatus(name as string);
 
     res.status(200).send(activeProcesses)
 }

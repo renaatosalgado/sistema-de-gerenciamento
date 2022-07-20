@@ -23,7 +23,7 @@ async function findByCompanyAndState(company: string, state: string) {
 				},
 				state: {
 					name: {
-						equals: state
+						equals: state.toUpperCase()
 					}
 				}
 			}
