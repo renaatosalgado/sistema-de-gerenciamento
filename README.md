@@ -1,6 +1,6 @@
 ## Teste 01
 
-Rota: http://localhost:5000/processes?status=ativo
+Rota: http://localhost:5000/processes/status?name=ativo
 
 Nesta rota é possível filtrar pelo status do processo (inativo ou ativo).
 
@@ -8,7 +8,7 @@ Nesta rota é possível filtrar pelo status do processo (inativo ou ativo).
 
 Rota: http://localhost:5000/processes/average?company=a&state=rj
 
-Nesta rota é possível filtrar por empresas (A ou B) e estado (RJ, SP, MG ou AM).
+Nesta rota é possível filtrar os processos por empresas (A ou B) e estado (RJ, SP, MG ou AM).
 
 ## Teste 03
 
@@ -24,7 +24,11 @@ Rota: http://localhost:5000/processes
 
 Nesta rota todos os processos são listados, incluindo o estado do mesmo e também o estado da empresa.
 
+## Teste 06
 
+Rota: http://localhost:5000/processes/number?number=trab
+
+Nesta rota é possível filtrar por qualquer string contendo parte do número do processo.
 
 
 
