@@ -2,6 +2,10 @@
 
 Esta API também está disponível em https://sistema-de-gerenciamento.herokuapp.com/
 
+Este é o banco de dados:
+
+<img src="src/assets/images/db-schema.png">
+
 ## Como rodar o projeto
 
 1. Clone este repositório
