@@ -32,7 +32,7 @@ model Process {
   companyId Int
   company   Company  @relation(fields: [companyId], references: [id])
   statusId  Int
-  number    String
+  number    String   @unique
   stateId   Int
   value     Int
   date      DateTime
