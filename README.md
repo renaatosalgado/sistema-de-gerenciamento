@@ -6,6 +6,8 @@ Este é o banco de dados:
 
 <img src="src/assets/images/db-schema.png">
 
+OBS: o arquivo .env não foi ignorado dos commits para que a variável de ambiente com a URL do bando de dados do deploy já esteja correta, e seja possível todas as verificações locais sem ter que criar outro banco de dados.
+
 ## Como rodar o projeto
 
 1. Clone este repositório
