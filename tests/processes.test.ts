@@ -18,6 +18,7 @@ describe('Teste 01', () => {
             sum += process.value
         })
 
+        console.log(`Teste 01 - A somatória é ${sum}`);
         expect(sum).toBe(1087000);
         expect(response.status).toBe(200);
     });
@@ -42,6 +43,7 @@ describe('Teste 02', () => {
         considerando o número de processos filtrados para tal empresa e tal estado */
         const average = sum / response.body.length;
 
+        console.log(`Teste 02 - A média é ${average}`);
         expect(average).toBe(110000);
         expect(response.status).toBe(200);
     });
@@ -56,6 +58,7 @@ describe('Teste 03', () => {
         const response = await server.get(`/processes/value?greaterThan=${value}`);
 
         //ao final, conta-se quantos objetos foram retornados da requisição com tal filtro de valor
+        console.log(`Teste 03 - A quantidade é ${response.body.length}`);
         expect(response.body).toHaveLength(2);
         expect(response.status).toBe(200);
     });
@@ -73,6 +76,7 @@ describe('Teste 04', () => {
         o +1 é devido ao fato de a lib dayjs contar os meses de 0 a 11 */
         const filteredProcesses = response.body.filter((process: { date: dayjs.Dayjs; }) => (dayjs(process.date).month() + 1) === month);
 
+        console.log(`Teste 04 - É o processo ${filteredProcesses[0].number}`);
         expect(filteredProcesses[0].number).toBe('00010TRABAM');
         expect(response.status).toBe(200);
     });
@@ -82,7 +86,7 @@ describe('Teste 05', () => {
     it('Obter a lista de processos no mesmo estado do cliente, para cada um dos clientes. A aplicação deve retornar uma lista com os processos de número “00001CIVELRJ”,”00004CIVELRJ” para o Cliente "Empresa A" e “00008CIVELSP”,”00009CIVELSP” para o o Cliente "Empresa B".', async () => {
 
         /* 
-            
+            Trazendo todos os processos do banco, o filtro é executado considerando o nome da companhia e a equivalência entre o estado original do processo e o estado onde está a companhia, por isso são dois filtros: um para cada empresa
         */
         const companyA = 'Empresa-A';
         const companyAProcessesNumber: string[] = [];
@@ -98,6 +102,9 @@ describe('Teste 05', () => {
         const companyBProcesses = response.body.filter((process: { company: { name: string; stateId: number }; stateId: number }) => process.company.name === companyB && process.company.stateId === process.stateId);
         companyBProcesses.forEach((process: { number: any; }) => companyBProcessesNumber.push(process.number));
 
+        console.log(`Teste 05 - Empresa-A, ${companyAProcessesNumber}`);
+        console.log(`Teste 05 - Empresa-B, ${companyBProcessesNumber}`);
+
         expect(companyAProcessesNumber).toEqual(['00001CIVELRJ', '00004CIVELRJ']);
         expect(companyBProcessesNumber).toEqual(['00008CIVELSP', '00009CIVELSP']);
         expect(response.status).toBe(200);
@@ -107,13 +114,17 @@ describe('Teste 05', () => {
 describe('Teste 06', () => {
     it('Obter a lista de processos que contenham a sigla “TRAB”. A aplicação deve retornar uma lista com os processos “00003TRABMG” e “00010TRABAM”.', async () => {
 
+        /* a variável 'number' é o fragmento do número do processo que será buscado no banco de dados, retornando todos os que contiverem tal fragmento
+        */
+
         const number = 'TRAB';
         const processes: string[] = [];
 
-        const response = await server.get('/processes/number?number=trab');
+        const response = await server.get(`/processes/number?number=${number}`);
 
         response.body.forEach((process: { number: string }) => processes.push(process.number));
 
+        console.log(`Teste 06 - São os processos ${processes}`);
         expect(processes).toEqual(['00003TRABMG', '00010TRABAM']);
         expect(response.status).toBe(200);
     });

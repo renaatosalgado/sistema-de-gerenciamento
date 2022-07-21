@@ -9,7 +9,7 @@ async function findByStatus(status: string) {
 				}
 			}
 		}
-	})
+	});
 }
 
 async function findByCompanyAndState(company: string, state: string) {
@@ -28,7 +28,7 @@ async function findByCompanyAndState(company: string, state: string) {
 				}
 			}
 		}
-	})
+	});
 }
 
 async function filterByGreaterValue(value: number) {
@@ -38,7 +38,7 @@ async function filterByGreaterValue(value: number) {
 				gt: value
 			}
 		}
-	})
+	});
 }
 
 async function listAll() {

@@ -5,7 +5,7 @@ const router = Router();
 
 router.use(processesRouter);
 router.get('/', (req, res) => {
-    res.send('Olá, está tudo nos Trinks por aqui!')
+    res.send('Hmmm, parece que essa API está nos Trinks!')
 })
 
 export default router;
