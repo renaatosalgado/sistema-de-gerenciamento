@@ -61,3 +61,45 @@ Sendo assim, no teste existe a filtragem e verificação para relacionar o estad
 Rota: /processes/number?number=trab
 
 Nesta rota é possível filtrar por qualquer string contendo parte do número do processo.
+
+## Tecnologias utilizadas
+
+<div align="start" style="margin: auto" >
+
+  <a href="https://www.linkedin.com/in/renato-salgado-dias/">
+    <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" title="TypeScript" />
+  </a>
+  
+  <a href="https://www.linkedin.com/in/renato-salgado-dias/">
+    <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" title="NodeJS" />
+  </a>
+  
+  <a href="https://www.linkedin.com/in/renato-salgado-dias/" target="_blank">
+    <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white" title="Express" />
+  </a>  
+  
+   <a href="https://www.linkedin.com/in/renato-salgado-dias/">
+    <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" title="PostgreSQL" />
+  </a>
+  
+  <a href="https://www.linkedin.com/in/renato-salgado-dias/" target="_blank">
+    <img src="https://img.shields.io/badge/Prisma-3982CE?style=for-the-badge&logo=Prisma&logoColor=white" title="Prisma" />
+  </a>
+  
+  <a href="https://www.linkedin.com/in/renato-salgado-dias/">
+    <img src="https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=white" title="Jest" />
+  </a> 
+  
+  <a href="https://www.linkedin.com/in/renato-salgado-dias/">
+    <img src="https://img.shields.io/badge/eslint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white" title="ESlint" />
+  </a> 
+  
+  <a href="https://www.linkedin.com/in/renato-salgado-dias/">
+    <img src="https://img.shields.io/badge/Prettier-b50ddb?style=for-the-badge&logo=prettier&logoColor=white" title="Prettier" />
+  </a> 
+  
+  <a href="https://www.linkedin.com/in/renato-salgado-dias/">
+    <img src="https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white" title="Heroku" />
+  </a> 
+
+</div>
